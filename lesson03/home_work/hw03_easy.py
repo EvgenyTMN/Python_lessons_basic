@@ -19,8 +19,17 @@ print(my_round(2.9999967, 5))
 # Билет считается счастливым, если сумма его первых и последних цифр равны.
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
-def lucky_ticket(ticket_number):
-    pass
+def lucky_ticket(tic_n):
+    tic_n = list(str(tic_n))
+    for i, item in enumerate(tic_n):
+        tic_n[i] = int(item)
+    left = sum(tic_n[0: 3])
+    right = sum(tic_n[3: 6])
+    if left == right:
+        return "'You are a lucky man'"
+    else:
+        return "'Try again'"
+
 
 
 print(lucky_ticket(123006))
